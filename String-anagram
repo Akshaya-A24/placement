@@ -1,0 +1,44 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String a = sc.next();
+        int a1 = a.length();
+        String b = sc.next();
+        int b1 = b.length();
+        char arr1[] = new char[a1];
+        for(int i=0; i<a1; i++){
+            arr1[i] = a.charAt(i);
+        }
+        char arr2[] = new char[b1];
+        for(int i=0; i<b1; i++){
+            arr2[i] = b.charAt(i);
+        }
+        if (a1 != b1){
+            System.out.print("Strings aren't anagrams");
+            return;
+        }
+        int count =0;
+        for(int i=0; i<a1; i++){
+            for(int j=0; j<b1; j++){
+                if(arr1[i] == arr2[j]){
+                    count++;
+                    break;
+                }
+                
+            }
+        }
+        if(count != a1){
+             System.out.print("Strings aren't anagrams");
+        }
+        else{
+             System.out.print("Strings are anagrams");
+        }
+        
+        
+        
+    }
+}
