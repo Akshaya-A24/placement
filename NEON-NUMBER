@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        if (n < 1 || n > 9) {
+            System.out.println("Invalid Input");
+            return;
+        }
+
+        int square = n * n;
+        int sum = 0;
+
+        while (square > 0) {
+            sum += square % 10;
+            square /= 10;
+        }
+
+        if (sum == n) {
+            System.out.printf("%03d is a Neon Number.%n", n);
+        } else {
+            System.out.printf("%04d is not a Neon Number.%n", n);
+        }
+    }
+}
