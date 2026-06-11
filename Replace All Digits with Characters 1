@@ -1,0 +1,33 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+        char even[] = new char[s.length()];
+        int odd[] = new int[s.length()];
+        for(int i=0; i<s.length(); i++){
+            if(i%2 == 0){
+                even[i] = s.charAt(i);
+                
+                
+            }
+            else{
+                odd[i] = s.charAt(i) - '0';
+                
+            }
+        }
+        for(int i=0; i<s.length(); i+=2){
+            
+            System.out.print(even[i]);
+            if(i+1 < s.length()){
+                char sum = (char)(even[i]+odd[i+1]);
+                System.out.print(sum);
+            }
+            
+            
+        }
+    }
+}
