@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static int gcd(int a, int b) {
+        while (b != 0) {
+            int t = b;
+            b = a % b;
+            a = t;
+        }
+        return a;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
+
+        int[] arr = {a, b, c};
+
+        // Sort the three numbers
+        for (int i = 0; i < 3; i++) {
+            for (int j = i + 1; j < 3; j++) {
+                if (arr[i] > arr[j]) {
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+
+        int secondLargest = arr[1];
+
+        int code = gcd(a, gcd(b, c));
+
+        System.out.println("The treasure is in the box which has number " + secondLargest + ".");
+        System.out.println("The code to open the box is " + code + ".");
+    }
+}
