@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String num = sc.next();
+
+        if (num.charAt(0) == '-' || num.charAt(0) == '+') {
+            num = num.substring(1);
+        }
+
+        int first = num.charAt(0) - '0';
+        int last = num.charAt(num.length() - 1) - '0';
+
+        System.out.println(first + last);
+    }
+}
